@@ -1,0 +1,63 @@
+.header{
+    display: flex;
+    position: fixed;
+    background-color: black;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 55px;
+}
+
+.left-side{
+    display: flex;
+    align-items: center;
+}
+
+.Home_link{
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px 10px;
+    color: white;
+    text-decoration-line: none;
+}
+
+.Profile_link{
+    font-size: 15px;
+    font-weight: 600;
+    padding: 10px 10px;
+    color: rgb(168, 161, 161);
+    text-decoration-line: none;
+}
+
+.right-side{
+    display: flex;
+    align-items: center;
+}
+.right-side input{
+    font-size: 15px;
+    font-weight: 600;
+    padding: 9px 9px;
+    border-style : solid;
+    border-color: black;
+    border-width: 0.5px;
+    border-radius: 7px;
+    margin-right: 6px;
+}
+.right-side button{
+    font-size: 15spx;
+    font-weight: 600;
+    padding: 9px 9px;
+    margin-right: 8px;
+    border-style : solid;
+    border-color: rgb(168, 161, 161);
+    border-width: 2px;
+    border-radius: 7px;
+    color: rgb(168, 161, 161);
+    background-color: black;
+    transition: opacity 0.2s;
+}
+
+.right-side button:active{
+    opacity: 0.7;
+}

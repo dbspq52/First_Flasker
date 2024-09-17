@@ -17,11 +17,11 @@ app = Flask(__name__)
 #trim
 #striptags
 @app.route('/')
-def index():
+def base():
     first_name = "John"
     stuff = "this is bold text"
     favorite_pizza = ["PPPP", "Cheese", "Potato", 425]
-    return render_template("index.html", 
+    return render_template("base.html", 
                            first_name = first_name
                            ,stuff = stuff,
                            favorite_pizza = favorite_pizza)
