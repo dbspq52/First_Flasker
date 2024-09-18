@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/navbar.css')}}">
 </head>
 <body>
     {% include 'navbar.html' %}
+    <br/>
     <div class="container">
         {% block content %}
             <h1>Hellow My Name is {{first_name}}</h1>

@@ -1,26 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="static\css\navbar.css">
-</head>
-<body>
-    <header class="header">
-        <div class="left-side">
-            <a class="Home_link" href="{{url_for('base')}}">Flasker</a>
-            <a class="Profile_link" href="{{url_for('user', name='jhon')}}">User Profile</a>
-        </div>
-
-        <div class="right-side">
-            <input type="text" placeholder="Search">
-            <button class="search-button">Search</button>
-        </div>
-    </header>
-
-    <div class="middle">
-        <p>adfadfadfadf</p>
+<header class="header">
+    <div class="left-side">
+        <a class="Home_link" href="{{url_for('base')}}">Flasker</a>
+        <a class="Profile_link" href="{{url_for('user', name='jhon')}}">User Profile</a>
+        <a class="Profile_link" href="{{url_for('name')}}">Name</a>
     </div>
-</body>
-</html>
+
+    <div class="right-side">
+        <input type="text" placeholder="Search">
+        <button class="search-button">Search</button>
+    </div>
+</header>
