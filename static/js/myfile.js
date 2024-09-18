@@ -1,0 +1,1 @@
+document.getElementById('demo').innerHTML = "This is JS what U want"

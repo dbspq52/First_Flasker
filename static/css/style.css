@@ -5,3 +5,15 @@
 .form-control{
     margin-bottom: 10px;
 }
+
+h1{
+    color : rgb(53, 84, 142);
+    font-size: 21px;
+    font-weight: 700;
+}
+
+#demo{
+    font-size: 20px;
+    font-weight: 700;
+    color : rgb(53, 84, 142)
+}
