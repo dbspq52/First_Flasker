@@ -1,15 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
 {% if name %}
-    <h1>Hello {{name}}</h1>
+    <div class="name-container">
+        <h1>Hello {{name}}</h1>
+    </div>
 {% else %}
-    <h1>What's Your Name?</h1>
-    <br/>
-    <form method="POST">
-        {{form.hidden_tag()}}
-        {{form.name.label}}
-        {{form.name()}}
-        {{form.submit()}}
-    </form>
+    <div class="name-container">
+        <h1 class="name-page-title">What's Your Name?</h1>
+        <br/>
+        <form method="POST">
+            {{form.hidden_tag()}}<!--이 것은 CSRF를 위한 코드이다.-->
+            {{form.name.label(class="form-label")}}
+            {{form.name(class="form-control")}}
+            {{form.submit(class="btn-primary")}}
+        </form>
+    </div>
 {%endif%}
 {% endblock %}
