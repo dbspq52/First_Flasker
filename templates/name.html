@@ -1,5 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
+
+
+{%for message in get_flashed_messages()%}
+    <div class="alert alert-primary alert-dismissible fade show" role="alert">
+        Hey {{name}} :: {{message}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+{%endfor%}
+
 {% if name %}
     <div class="name-container">
         <h1>Hello {{name}}</h1>
@@ -8,11 +17,11 @@
     <div class="name-container">
         <h1 class="name-page-title">What's Your Name?</h1>
         <br/>
-        <form method="POST">
+        <form method="POST" class="name-sub-container">
             {{form.hidden_tag()}}<!--이 것은 CSRF를 위한 코드이다.-->
             {{form.name.label(class="form-label")}}
             {{form.name(class="form-control")}}
-            {{form.submit(class="btn-primary")}}
+            {{form.submit(class="btn btn-primary")}}
         </form>
     </div>
 {%endif%}

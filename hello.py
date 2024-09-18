@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, flash
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
@@ -71,8 +71,10 @@ def name():
     if form.validate_on_submit():# 폼이 제출되었고 유효한지 확인합니다//폼이 입력시 다시 함수가 돌아감
         name = form.name.data #폼이 제출되면 name 이라는 변수에 form.name.data 값이 들어감
         form.name.data = '' #그리고 다시 nULL로 초기화 시킴
+        flash("Welcome to our WebSite")
         
     return render_template("name.html",
                            name = name,
                            form = form)
+    
 app.run(debug=True)
