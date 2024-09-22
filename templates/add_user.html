@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+        <h1 class="name-page-title">User List</h1>
+        <br/>
+        <form method="POST" class="name-sub-container">
+            {{form.hidden_tag()}}<!--이 것은 CSRF를 위한 코드이다.-->
+            {{form.name.label(class="form-label")}}
+            {{form.name(class="form-control")}}
+
+            {{form.email.label(class="form-label")}}
+            {{form.email(class="form-control")}}
+
+            {{form.submit(class="btn btn-primary")}}
+        </form>
+    </div>
+<table class="table table-striped table-hover">
+{%for our_user in our_users%}
+    <tr>
+    <td>{{our_user.id}}. {{our_user.name}} - {{our_user.email}}</td>
+    </tr>
+{%endfor%}    
+</table>
+{% endblock %}
