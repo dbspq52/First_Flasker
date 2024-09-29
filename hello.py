@@ -1,4 +1,4 @@
-from flask import Flask, render_template, flash
+from flask import Flask, render_template, flash, request, redirect
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
@@ -90,9 +90,31 @@ def name():
                            name = name,
                            form = form)
     
-
-
-
+@app.route('/update/<int:id>',methods=["POST", "GET"])
+def update(id):
+    name = None
+    our_users = Users.query.order_by(Users.date_added)
+    form = UserForm()
+    name_to_update = Users.query.get_or_404(id)
+    if request.method == "POST":
+        name_to_update.name = request.form['name']
+        name_to_update.email = request.form['email']
+        try:
+            db.session.commit()
+            flash("User Updated Successfully!")
+            return render_template("add_user.html",
+                                   form = form,
+                                   name = name,
+                                   our_users = our_users)
+        except:
+            flash("ERROR!")
+            return render_template("update.html",
+                                   form = form,
+                                   name_to_update = name_to_update)
+    else:
+        return render_template("update.html",
+                                   form = form,
+                                   name_to_update = name_to_update)
 
 
 # Create a route decorator__URL~~~.HTML
