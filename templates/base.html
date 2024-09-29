@@ -15,23 +15,7 @@
     <br/>
     <div class="container">
         {% block content %}
-            <h1>Hellow My Name is {{first_name}}</h1>
-            <p>its good to see you</p>
-            <p>gogoggogogo</p>
-            <p>{{stuff|trim}}</p>
-
-            <h3>Favorite Pizza</h3>
-            {% for topping in favorite_pizza %}
-                {% if topping == 425 %}
-                    {{ topping}}<br/>
-                {% else %}
-                    {{topping}}<br/>
-                {% endif %}
-            {% endfor %}
-
-            <br/>
-            <br/>
-            {{favorite_pizza[2]|reverse}}
+            
         {% endblock %}
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
